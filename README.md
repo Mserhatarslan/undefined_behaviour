@@ -16,24 +16,24 @@ Its reason for existence is to ensure that compilers perform good optimizations.
 2) Undefined behavior in the integer division by 0 operation.
 3) Accessing a non-existent index of an array is undefined behavior.
 4) This is undefined behavior. An object was subjected to a side effect within an expression, but the same object was reused before the sequence point passed.
-   
+   ```c++
    int main(void)
    {
        int x = 20;
        int y = x + x++;
    }
-
+```c++
 6) If we are performing arithmetic operations, overflow on signed types is undefined behavior.
 7) No syntax error but undefined behavior. They are doing it on the embedded side.
 
 An attempt to modify an object that is itself const is undefined behavior. Removing the syntax obstacle does not change the fact that it is ub. This is definitely undefined behavior.
-
+```c++
     const int x = 10; 
     int *p = (int*)&x; 
     *p = 4564;
-    
+    ```c++
 7) A function should not return an address of an automatically-lived object. Undefined behavior. Static eliminates ub.
-
+```c++
      int* scan_x(int ival)
      {
          int ret = ival;
@@ -47,7 +47,7 @@ An attempt to modify an object that is itself const is undefined behavior. Remov
        printf("%d", *p);
      }
 
-
+```c++
 8) We can dereference a pointer that points to an object.
   If I dereference a pointer that holds the address of the end of an array, undefined behavior.
   A pointer whose value is a NULL pointer should never be dereferenced. Undefined behavior.
@@ -55,10 +55,10 @@ An attempt to modify an object that is itself const is undefined behavior. Remov
 9) String literals are arrays that can be used for read-only purposes.
    When we look at the static type system in the C language, while there are char arrays, string literals are immutable arrays.
    Attempting to change a string literal is undefined behavior. Undefined behavior.
-
+```c++
     char* pname = “Cetin”; 
     *pname = ‘M’
-
+```c++
 
 
 10) Attempting to return a memory block that was not dynamically acquired is undefined behavior.
