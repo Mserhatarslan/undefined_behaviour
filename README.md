@@ -22,7 +22,7 @@ Its reason for existence is to ensure that compilers perform good optimizations.
        int x = 20;
        int y = x + x++;
    }
-```c++
+```
 6) If we are performing arithmetic operations, overflow on signed types is undefined behavior.
 7) No syntax error but undefined behavior. They are doing it on the embedded side.
 
@@ -31,7 +31,7 @@ An attempt to modify an object that is itself const is undefined behavior. Remov
     const int x = 10; 
     int *p = (int*)&x; 
     *p = 4564;
-    ```c++
+    ```
 7) A function should not return an address of an automatically-lived object. Undefined behavior. Static eliminates ub.
 ```c++
      int* scan_x(int ival)
@@ -47,7 +47,7 @@ An attempt to modify an object that is itself const is undefined behavior. Remov
        printf("%d", *p);
      }
 
-```c++
+```
 8) We can dereference a pointer that points to an object.
   If I dereference a pointer that holds the address of the end of an array, undefined behavior.
   A pointer whose value is a NULL pointer should never be dereferenced. Undefined behavior.
@@ -58,7 +58,7 @@ An attempt to modify an object that is itself const is undefined behavior. Remov
 ```c++
     char* pname = “Cetin”; 
     *pname = ‘M’
-```c++
+```
 
 
 10) Attempting to return a memory block that was not dynamically acquired is undefined behavior.
