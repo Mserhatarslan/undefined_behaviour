@@ -16,14 +16,15 @@ Its reason for existence is to ensure that compilers perform good optimizations.
 2) Undefined behavior in the integer division by 0 operation.
 3) Accessing a non-existent index of an array is undefined behavior.
 4) This is undefined behavior. An object was subjected to a side effect within an expression, but the same object was reused before the sequence point passed.
+   
    int main(void)
    {
        int x = 20;
        int y = x + x++;
    }
 
-5) If we are performing arithmetic operations, overflow on signed types is undefined behavior.
-6) No syntax error but undefined behavior. They are doing it on the embedded side.
+6) If we are performing arithmetic operations, overflow on signed types is undefined behavior.
+7) No syntax error but undefined behavior. They are doing it on the embedded side.
 
 An attempt to modify an object that is itself const is undefined behavior. Removing the syntax obstacle does not change the fact that it is ub. This is definitely undefined behavior.
 
